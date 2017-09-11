@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KKQ-1F-uqg">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="K0Y-TN-0p8">
+            <objects>
+                <navigationController id="KKQ-1F-uqg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHB-oD-guM" customClass="FUINavigationBar" customModule="SAPFiori">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EoA-2u-DIL" kind="relationship" relationship="rootViewController" id="tZw-5s-6Sr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="poM-cO-Ys5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="73"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="PCX-fL-zmc">
+            <objects>
+                <viewController id="EoA-2u-DIL" customClass="ProductListViewController" customModule="Shop" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M08-YB-RNJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ax2-7H-EUE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LSk-oj-pOd">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQ2-cq-tsV">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCellID" id="Cdz-7Z-xse" customClass="FUIObjectTableViewCell" customModule="SAPFiori">
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cdz-7Z-xse" id="tLb-OL-oGa">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EoA-2u-DIL" id="72H-kt-qAT"/>
+                                    <outlet property="delegate" destination="EoA-2u-DIL" id="0PW-ol-lrm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ax2-7H-EUE" firstAttribute="top" secondItem="oQ2-cq-tsV" secondAttribute="bottom" id="KYj-Cd-cqp"/>
+                            <constraint firstAttribute="trailing" secondItem="oQ2-cq-tsV" secondAttribute="trailing" id="geb-k2-qba"/>
+                            <constraint firstItem="oQ2-cq-tsV" firstAttribute="leading" secondItem="LSk-oj-pOd" secondAttribute="leading" id="hyB-rf-wmg"/>
+                            <constraint firstItem="oQ2-cq-tsV" firstAttribute="top" secondItem="M08-YB-RNJ" secondAttribute="bottom" id="nQ3-40-KQa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shop" id="RfF-Xx-MxX"/>
+                    <connections>
+                        <outlet property="tableView" destination="oQ2-cq-tsV" id="VSK-sy-yqj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zC-tt-ZEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="74"/>
+        </scene>
+    </scenes>
+</document>
